@@ -1,7 +1,7 @@
-import Fecha from "./Fecha.js"
-import Tiempo from "./Tiempo.js"
-import Doctor from "./Doctor.js"
-import Paciente from "./Paciente.js"
+import Fecha from "./fecha.js"
+import Tiempo from "./tiempo.js"
+import Doctor from "./doctor.js"
+import Paciente from "./paciente.js"
 
 export default class Cita{
     /**
@@ -12,12 +12,12 @@ export default class Cita{
      * @param {Paciente} paciente 
      */
     constructor(fecha, tiempo, doctor, paciente){
-        this.fecha = fecha
-        this.tiempo = tiempo
-        this.doctor = doctor
-        this.paciente = paciente
+        this._fecha = fecha
+        this._tiempo = tiempo
+        this._doctor = doctor
+        this._paciente = paciente
     }
     getPerfil(){
-        return `${this.fecha.getFecha()}, ${this.tiempo.getFormato24()}, Dr. ${this.doctor.nombre.apellidoPaterno}, ${this.paciente.nombre.getNombreCompleto()}`
+        return `${this._fecha.getFecha()}, ${this._tiempo.getFormato24()}, Dr. ${this._doctor.getApellidoPaterno()}, ${this._paciente.getNombre()}`
     }
 }
