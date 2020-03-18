@@ -20,4 +20,15 @@ export default class Doctor{
     getPerfil(){
         return `${this._cedula}, ${this._especialidad}, ${this._nombre.getNombreCompleto()}, ${this._telefono}`
     }
+    getCedula(){
+        return this._cedula
+    }
+    esIgualA(doctor){
+        if(doctor.getCedula() === this._cedula){
+            
+            return true
+        }
+        
+        return false
+    }
 }

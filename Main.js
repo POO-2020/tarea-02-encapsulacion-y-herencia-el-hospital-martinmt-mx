@@ -98,6 +98,7 @@ class Main{
         let doctor2 = new Doctor(datosDoctor2)
         let doctor3 = new Doctor(datosDoctor3)
     
+        
         this.hospital.registrarDoctor(doctor1)
         this.hospital.registrarDoctor(doctor2)
         this.hospital.registrarDoctor(doctor3)
