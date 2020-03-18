@@ -8,7 +8,8 @@ import Hospital from "./Hospital.js"
 import PacienteAsegurado from "./pacienteAsegurado.js"
 class Main{
     constructor() {
-        this.hospital = new Hospital("IMMS", "Av. Carranza 123");
+        let datosHospital = {nombre: "IMMS", direccion: "Av. Carranza 123"}
+        this.hospital = new Hospital(datosHospital)
     }
     probarFecha(){
         let fecha1 = new Fecha(12,4,2022)
@@ -64,14 +65,15 @@ class Main{
             fechaNacimiento: new Fecha(3,4,2001),
             telefono: 3122739451
         }
-        let datosDoctor = {cedula: "JLM19",
+        let datosDoctor1 = {cedula: "JLM19",
         especialidad: "Cirujano",
         nombre: new Nombre("Juan", "López", "Méndez"),
         telefono: 3213339999}
-        let cita1 = new Cita(new Fecha(3,4,2020),
-        new Tiempo(3,30,"pm"),
-        new Doctor(datosDoctor),
-        new Paciente(datosPaciente1))
+        let datosCita1 = {fecha: new Fecha(24,2,2021),
+            tiempo: new Tiempo(4,40,"pm"),
+            doctor: new Doctor(datosDoctor1),
+            paciente: new Paciente(datosPaciente1)}
+        let cita1 = new Cita(datosCita1)
         console.log(cita1.getPerfil())
     }
 
@@ -113,10 +115,15 @@ class Main{
         nombre: new Nombre("Luis", "Pérez", "Lopez"),
         telefono: 3124556366
         }
-        let cita1 = new Cita(new Fecha(24,2,2021),
+        
+        let datosCita1 = {fecha: new Fecha(24,2,2021),
+            tiempo: new Tiempo(4,40,"pm"),
+            doctor: new Doctor(datosDoctor1),
+            paciente: new Paciente(datosPaciente1)}
+        let cita1 = new Cita(datosCita1)
         new Tiempo(4,40,"pm"),
         new Doctor(datosDoctor1),
-        new Paciente(datosPaciente1))
+        new Paciente(datosPaciente1)
         this.hospital.registrarCita(cita1)
         this.hospital.listarCitas()
     }
